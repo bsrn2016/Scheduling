@@ -156,9 +156,11 @@ public class Methods {
 			prozessList = new ArrayList<>(temp3);
 			for (int i = 0; i < temp3; i++) {
 				System.out.println("Daten für Prozess " + (i + 1) + ": ");
-				String id = ""; 
+				String id = "";
 				do {
-					System.out.println("Name: (max 5 Zeichen) ");// get the name of the process
+					System.out.println("Name: (max 5 Zeichen) ");// get the name
+																	// of the
+																	// process
 					id = sc.next();
 				} while (id.length() > 5);
 				int ankunftsZeit = 21;

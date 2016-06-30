@@ -41,10 +41,10 @@ public class Scheduling {
 		// calculation for terminierung
 		int[] terminierung = new int[tempProzess.size()];
 		terminierung[0] = tempProzess.get(0).getAnkunftsZeit() + tempProzess.get(0).getRechenZeit(); // terminierung
-																									// for
-																									// the
-																									// first
-																									// Process
+																										// for
+																										// the
+																										// first
+																										// Process
 		for (int j = 1; j < tempProzess.size(); j++) {
 			int temp = 0;
 			while (terminierung[j - 1] >= tempProzess.get(j + temp).getAnkunftsZeit()) { // check
@@ -79,10 +79,10 @@ public class Scheduling {
 																// container
 				}
 				tempTemp.sort(Comparator.comparing(Prozess::getRechenZeit)); // ..and
-																			// sort
-																			// them
-																			// by
-																			// rechenZeit
+																				// sort
+																				// them
+																				// by
+																				// rechenZeit
 				for (int i = 0; i < temp; i++) {
 					tempProzess.remove(i + j);
 					tempProzess.add(i + j, tempTemp.get(i)); // ..re-add them
@@ -145,7 +145,8 @@ public class Scheduling {
 																			// Time
 				System.out.print("*" + "\t");
 			}
-			temp += tempProzess.get(i).getRechenZeit(); // if done CPU Burst Time
+			temp += tempProzess.get(i).getRechenZeit(); // if done CPU Burst
+														// Time
 														// will be added to temp
 		}
 		printData(tempProzess, 0);
@@ -276,7 +277,7 @@ public class Scheduling {
 				System.out.println(rePosition.get(i).getRechenZeit());
 				tempProzess.set(i, rePosition.get(i));
 				bereiteProzesse.add(rePosition.get(i)); // add it to a temporary
-													// container
+				// container
 			}
 		} else { // else just add the first one to the container
 			bereiteProzesse.add(tempProzess.get(0));
@@ -286,17 +287,19 @@ public class Scheduling {
 		for (int i = start; i < terminierung[terminierung.length - 1]; i++) {
 			if (i < pruefPunkt.get(0)) {
 				// i smaller than the next check point
-				if (bereiteProzesse.get(0).getRechenZeit() > 0) { // rechenZeit greater
-															// than
-															// 0
+				if (bereiteProzesse.get(0).getRechenZeit() > 0) { // rechenZeit
+																	// greater
+					// than
+					// 0
 					bereiteProzesse.get(0).setRechenZeit(bereiteProzesse.get(0).getRechenZeit() - 1);
 					bereiteProzesse.get(0).getMarks()[i] = true;
-				} else if (bereiteProzesse.get(0).getRechenZeit() == 0) { // equals 0
-																	// but
-																	// still not
-																	// at
-																	// the
-																	// checkpoint
+				} else if (bereiteProzesse.get(0).getRechenZeit() == 0) { // equals
+																			// 0
+					// but
+					// still not
+					// at
+					// the
+					// checkpoint
 					// bereiteProzesse.get(0).setCheck(false);
 					for (int j = 0; j < tempProzess.size(); j++) { // mark it
 																	// finished
@@ -314,13 +317,15 @@ public class Scheduling {
 							break;
 						}
 					}
-					// if (bereiteProzesse.size() > 1) { // if there is more than 1
+					// if (bereiteProzesse.size() > 1) { // if there is more
+					// than 1
 					// process
 					// in the temporary container
 					// bereiteProzesse.remove(0);
 					if (bereiteProzesse.size() == 0 && pruefPunkt.size() > 1) {
-						
-						// } else if (bereiteProzesse.size() == 1 && pruefPunkt.size()
+
+						// } else if (bereiteProzesse.size() == 1 &&
+						// pruefPunkt.size()
 						// > 1) { // if
 						// there
 						// is
@@ -357,8 +362,8 @@ public class Scheduling {
 						// bereiteProzesse.remove(0); // remove the finished 1
 						i = pruefPunkt.get(0);
 						bereiteProzesse.sort(Comparator.comparing(Prozess::getRechenZeit)); // sort
-																					// by
-																					// rechenZeit
+						// by
+						// rechenZeit
 					}
 					i -= 1;
 				}
@@ -513,13 +518,14 @@ public class Scheduling {
 		for (int i = start; i < terminierung[terminierung.length - 1]; i++) {
 			if (i < pruefPunkt.get(0)) {
 				// i smaller than the check point
-				if (bereiteProzesse.get(0).getRechenZeit() > 0) { // rechenZeit greater
-															// than
-															// 1
+				if (bereiteProzesse.get(0).getRechenZeit() > 0) { // rechenZeit
+																	// greater
+					// than
+					// 1
 					bereiteProzesse.get(0).setRechenZeit(bereiteProzesse.get(0).getRechenZeit() - 1);
 					bereiteProzesse.get(0).getMarks()[i] = true;
 				} else if (bereiteProzesse.get(0).getRechenZeit() == 0) { // rechenZeit
-																	// equals 0
+					// equals 0
 					// bereiteProzesse.get(0).setCheck(false);
 					for (int j = 0; j < tempProzess.size(); j++) { // marks as
 																	// finished
@@ -539,12 +545,14 @@ public class Scheduling {
 						bereiteProzesse.remove(0); // remove the first 1
 						int tempC = 1;
 
-						// reverse all the processes that have the same rechenZeit
+						// reverse all the processes that have the same
+						// rechenZeit
 						// as that of 0
 						if (bereiteProzesse.size() > 1) {
 							bereiteProzesse.sort(Comparator.comparing(Prozess::getRechenZeit)); // sort
 							Collections.reverse(bereiteProzesse); // reverse
-							while (bereiteProzesse.get(0).getRechenZeit() == bereiteProzesse.get(tempC).getRechenZeit()) {
+							while (bereiteProzesse.get(0).getRechenZeit() == bereiteProzesse.get(tempC)
+									.getRechenZeit()) {
 								tempC++;
 								if (tempC == bereiteProzesse.size()) {
 									break;
@@ -579,14 +587,16 @@ public class Scheduling {
 						bereiteProzesse.remove(0); // remove the process at 0
 						i = pruefPunkt.get(0);
 						bereiteProzesse.sort(Comparator.comparing(Prozess::getRechenZeit)); // sort
-																					// by
-																					// rechenZeit
+						// by
+						// rechenZeit
 						Collections.reverse(bereiteProzesse); // reverse
-						// reverse all the processes that have the same rechenZeit
+						// reverse all the processes that have the same
+						// rechenZeit
 						// as that of 0
 						int tempC = 1;
 						if (bereiteProzesse.size() > 1) {
-							while (bereiteProzesse.get(0).getRechenZeit() == bereiteProzesse.get(tempC).getRechenZeit()) {
+							while (bereiteProzesse.get(0).getRechenZeit() == bereiteProzesse.get(tempC)
+									.getRechenZeit()) {
 								tempC++;
 								if (tempC == bereiteProzesse.size()) {
 									break;
