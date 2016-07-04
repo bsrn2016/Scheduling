@@ -100,7 +100,12 @@ public class Methods {
 									// besides an integer --> programm stops
 				System.out.println("Fehler!");
 				System.out.println("Bitte das Programm neu starten.");
-				System.exit(0);
+				try {
+					Thread.sleep(2000);
+					System.exit(0);
+				} catch (Exception e2) {
+					// TODO: handle exception
+				}
 			}
 		} while (temp > 4 || temp < 0); // will call the do part until the user
 										// chooses a number between 0 and 4
@@ -119,7 +124,12 @@ public class Methods {
 									// besides an integer --> programm stops
 				System.out.println("Fehler!");
 				System.out.println("Bitte das Programm neu starten.");
-				System.exit(0);
+				try {
+					Thread.sleep(2000);
+					System.exit(0);
+				} catch (Exception e2) {
+					// TODO: handle exception
+				}
 			}
 		} while (temp2 > 1 || temp2 < 0); // will call the do part until the
 											// user chooses a number between 0
@@ -139,7 +149,12 @@ public class Methods {
 									// besides an integer --> Programm stops
 				System.out.println("Fehler!");
 				System.out.println("Bitte das Programm neu starten.");
-				System.exit(0);
+				try {
+					Thread.sleep(2000);
+					System.exit(0);
+				} catch (Exception e2) {
+					// TODO: handle exception
+				}
 			}
 		} while (temp3 < 2 || temp3 > 10); // will call the do part until the
 											// user chooses a number between 2
@@ -171,7 +186,13 @@ public class Methods {
 					} catch (Exception e) {
 						System.out.println("Fehler!");
 						System.out.println("Bitte das Programm neu starten.");
-						System.exit(0);
+						try {
+							Thread.sleep(2000);
+							System.exit(0);
+						} catch (Exception e2) {
+							// TODO: handle exception
+						}
+						
 					}
 				} while (ankunftsZeit > 10 || ankunftsZeit < 0); // start has to
 																	// be
@@ -186,7 +207,13 @@ public class Methods {
 					} catch (InputMismatchException e) {
 						System.out.println("Fehler!");
 						System.out.println("Bitte das Programm neu starten.");
-						System.exit(0);
+						try {
+							Thread.sleep(2000);
+							System.exit(0);
+						} catch (Exception e2) {
+							// TODO: handle exception
+						}
+						
 					}
 
 				} while (rechenZeit < 1 || rechenZeit > 10); // cpu burst time
@@ -270,6 +297,12 @@ public class Methods {
 			n = sc.nextInt();
 		} catch (Exception e) {
 			System.out.println("Fehler! System wird geschlossen.");
+			try {
+				Thread.sleep(2000);
+				System.exit(0);
+			} catch (Exception e2) {
+				// TODO: handle exception
+			}
 			System.exit(0);
 		}
 		// 0 = again
@@ -280,7 +313,13 @@ public class Methods {
 		else {
 			sc.close();
 			System.out.println("Vielen Dank für die Ausführung, bis zum nächsten Mal!");
-			System.exit(0);
+			try {
+				Thread.sleep(2000);
+				System.exit(0);
+			} catch (Exception e2) {
+				// TODO: handle exception
+			}
+			
 		}
 
 	}
