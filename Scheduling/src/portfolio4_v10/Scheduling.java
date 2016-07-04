@@ -274,7 +274,7 @@ public class Scheduling {
 																			// rechenZeit
 
 			for (int i = 0; i < rePosition.size(); i++) {
-				System.out.println(rePosition.get(i).getRechenZeit());
+	
 				tempProzess.set(i, rePosition.get(i));
 				bereiteProzesse.add(rePosition.get(i)); // add it to a temporary
 				// container
